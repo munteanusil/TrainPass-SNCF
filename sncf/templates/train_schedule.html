@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Trenuri</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_schedule.css') }}">
+
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='SNCF.png') }}" alt="SNCF Logo" class="sncf-logo">
+        <h1>Program Trenuri</h1>
+    </header>
+
+    <main>
+        <table class="train-table">
+            <thead>
+                <tr>
+                    <th>Număr Tren</th>
+                    <th>Plecare</th>
+                    <th>Sosire</th>
+                    <th>Ora Plecare</th>
+                    <th>Ora Sosire</th>
+                    <th>Tip Tren</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for train in schedules %}
+                <tr>
+                    <td>{{ train.train_number }}</td>
+                    <td>{{ train.departure_station }}</td>
+                    <td>{{ train.arrival_station }}</td>
+                    <td>{{ train.departure_time }}</td>
+                    <td>{{ train.arrival_time }}</td>
+                    <td>{{ train.train_type }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+
+    <footer>
+        <p>© SNCF 2025 - Toate drepturile rezervate</p>
+    </footer>
+</body>
+</html>

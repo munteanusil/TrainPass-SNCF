@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Statistici</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_dash.css') }}">
+</head>
+<body>
+
+    <header>
+        <h1>📊 Dashboard - Statistici</h1>
+    </header>
+
+    <main>
+        <div class="chart-container">
+            <h2>📍 Rezervări pe destinații</h2>
+            <div id="graph-reservations"></div>
+        </div>
+
+        <div class="chart-container">
+            <h2>🎫 Tipuri de bilete cumpărate</h2>
+            <div id="graph-tickets"></div>
+        </div>
+
+        <div class="chart-container">
+            <h2>💳 Metode de plată utilizate</h2>
+            <div id="graph-payment"></div>
+        </div>
+    </main>
+
+    <script>
+        var graphReservations = {{ graph_reservations | safe }};
+        Plotly.newPlot('graph-reservations', graphReservations.data, graphReservations.layout);
+
+        var graphTickets = {{ graph_tickets | safe }};
+        Plotly.newPlot('graph-tickets', graphTickets.data, graphTickets.layout);
+
+        var graphPayment = {{ graph_payment | safe }};
+        Plotly.newPlot('graph-payment', graphPayment.data, graphPayment.layout);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,271 @@
+/* Resetare stiluri generale */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to bottom, #f4f4f9, #ffffff);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    text-align: center;
+}
+
+/* HEADER */
+header.app-header {
+    background-color: #1e88e5;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+header .logo {
+    height: 70px;
+    width: auto;
+}
+
+header .app-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* CONTAINER PRINCIPAL */
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin: 20px auto;
+    max-width: 1400px;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+
+/* FORMULAR */
+.app-container {
+    flex: 1;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    font-size: 18px;
+}
+
+/* SECȚIUNI */
+.section {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.section label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 5px;
+}
+
+/* INPUT & SELECT */
+.section input, .section select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* HARTA */
+.map-container {
+    flex: 1;
+    height: 500px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal pentru alegerea locurilor */
+dialog#seat-modal {
+    width: 60vw; /* Face modalul mai lat */
+    max-width: 700px; /* Dimensiune maximă */
+    padding: 25px;
+    border-radius: 12px;
+    border: 2px solid #1e88e5;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* Titlul modalului */
+dialog#seat-modal h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #1e88e5;
+}
+
+/* GRID PENTRU LOCURI */
+.seat-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    padding: 10px;
+}
+
+/* Rândurile de locuri */
+.seat-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 500px; /* Creștem lățimea */
+}
+
+/* Stilizarea locurilor */
+.seat {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Stil locuri disponibile */
+.available {
+    background-color: white;
+    border: 2px solid gray;
+}
+
+/* Stil locuri ocupate */
+.occupied {
+    background-color: #ffcc00;
+    border: 2px solid #ff8800;
+    cursor: not-allowed;
+}
+
+/* Stilizare hover */
+.seat:not(.occupied):hover {
+    background-color: #1e88e5;
+    color: white;
+}
+
+/* Buton de închidere modal */
+dialog#seat-modal button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #e53935;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+dialog#seat-modal button:hover {
+    background-color: #c62828;
+}
+
+/* Responsivitate pentru locuri */
+@media (max-width: 768px) {
+    dialog#seat-modal {
+        width: 90vw;
+    }
+    .seat {
+        width: 45px;
+        height: 45px;
+        font-size: 14px;
+    }
+    .seat-row {
+        gap: 10px;
+        max-width: 350px;
+    }
+}
+
+.qr-code {
+    width: 120px;  /* 🔹 Ajustează lățimea */
+    height: 120px; /* 🔹 Ajustează înălțimea */
+    margin: 15px auto;
+    display: block;
+    border: 3px solid #1e88e5;
+    border-radius: 10px;
+}
+
+/* BUTON CONFIRMARE */
+.confirm-button {
+    width: 100%;
+    background-color: #1e88e5;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.confirm-button:hover {
+    background-color: #1565c0;
+}
+
+/* FOOTER */
+footer.app-footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Tablete */
+@media (max-width: 1024px) {
+    .content-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .map-container {
+        width: 100%;
+        height: 350px;
+    }
+
+    .seat-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Telefoane */
+@media (max-width: 768px) {
+    .app-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .seat-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .confirm-button {
+        font-size: 16px;
+        padding: 12px;
+    }
+}

@@ -1,0 +1,12 @@
+train_number,departure_station,arrival_station,departure_time,arrival_time,train_type
+IC123,Paris,Lyon,08:30,10:45,Intercity
+TGV789,Paris,Nice,09:15,14:30,TGV
+TGV321,Bordeaux,Marseille,07:45,12:00,TGV
+IC456,Lyon,Bordeaux,10:00,14:30,Intercity
+IC654,Nice,Paris,15:30,20:00,Intercity
+TGV 6505,Nice,Cannes,09:00,9:45,High-speed train
+TGV 6505,Nice,Cannes,09:00,9:45,High-speed train
+TGV 6505,Nice,Cannes,09:00,9:45,High-speed train
+TGV 101,Lyon,Paris,10:00,13:45,High-speed train
+TGV 6505,Nice,Bordeaux,10:55,15:40,TGV low-cost
+TGV 6102,Nice,Bordeaux,10:55,15:40,TGV low-cost

@@ -1,0 +1,80 @@
+/* styles.css */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f8f9fa;
+    color: #343a40;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #e60073; /* 🌸 Schimbare culoare */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+main {
+    margin: 30px auto;
+    width: 90%;
+    max-width: 1200px;
+}
+
+.train-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.train-table thead {
+    background-color: #e60073; /* 🌸 Schimbare culoare */
+    color: white;
+}
+
+.train-table th,
+.train-table td {
+    padding: 12px 15px;
+    text-align: center;
+}
+
+.train-table tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.train-table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.train-table tbody tr:hover {
+    background-color: #ff99cc; /* 🌸 Adăugare efect hover mai vizibil */
+}
+
+.train-table th {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0;
+    background-color: #e60073;
+    color: white;
+    font-size: 0.9rem;
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.1);
+}
+.sncf-logo {
+    display: block;
+    margin: 0 auto;
+    width: 200px; /* Ajustează dimensiunea după preferință */
+    height: auto;
+    padding-bottom: 10px;
+}

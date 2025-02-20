@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trenuri Disponibile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>🚆 Gestionare Trenuri</h1>
+        <a href="{{ url_for('add_train') }}" class="btn">➕ Adaugă tren</a>
+    </header>
+
+    <main>
+        <table class="train-table">
+            <thead>
+                <tr>
+                    <th>Număr Tren</th>
+                    <th>Plecare</th>
+                    <th>Sosire</th>
+                    <th>Ora Plecare</th>
+                    <th>Ora Sosire</th>
+                    <th>Tip Tren</th>
+                    <th>Acțiuni</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for train in trains %}
+                <tr>
+                    <td>{{ train.train_number }}</td>
+                    <td>{{ train.departure_station }}</td>
+                    <td>{{ train.arrival_station }}</td>
+                    <td>{{ train.departure_time }}</td>
+                    <td>{{ train.arrival_time }}</td>
+                    <td>{{ train.train_type }}</td>
+                    <td>
+                        <a href="{{ url_for('edit_train', train_id=train.id) }}" class="btn edit">✏ Editare</a>
+                        <!-- Formular pentru ștergerea trenului -->
+                <form action="{{ url_for('delete_train', train_id=train.id) }}" method="POST" style="display:inline;">
+                    <button type="submit" class="btn btn-danger" onclick="return confirm('Ești sigur că vrei să ștergi acest tren?');">❌ Ștergere</button>
+                </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+
+    <footer>
+        <p>© SNCF 2025 - Toate drepturile rezervate</p>
+    </footer>
+</body>
+</html>

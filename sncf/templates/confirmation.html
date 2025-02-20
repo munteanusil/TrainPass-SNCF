@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmare Bilet</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1> Biletul tau SNCF</h1>
+     <p><strong>Nume client:</strong> {{ client.name }}</p>
+     <p><strong>Loc rezervat:</strong> {{ seat_number }}</p>
+    <p>Plecare: {{ destination.departure }}</p>
+    <p>Destinație: {{ destination.destination }}</p>
+    <p>Tip bilet: {{ client.type_ticket }}</p>
+    <p>Adulți: {{ client.no_adults }}</p>
+    <p>Copii: {{ client.no_childrens }}</p>
+    <p>Tip călătorie: {{ ticket.type_trip }}</p>
+    <p>Clasa: {{ ticket.classtype }}</p>
+    <p>Metodă de plată: {{ ticket.methodofpay }}</p>
+
+<h2>Cod QR</h2>
+<img src="{{ url_for('static', filename='qr_code.png') }}" alt="Cod QR" class="qr-code">
+<p>Acesta este codul QR generat pentru datele biletului tău.</p>
+
+</body>
+</html>
