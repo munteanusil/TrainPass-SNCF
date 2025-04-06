@@ -1,4 +1,4 @@
-🚆 TrainPass SNCF is a Flask-based web application that allows users to book train tickets for high-speed and regional trains in France. The system integrates an interactive train selection, seat reservation, and QR code generation for ticket validation, providing a smooth and efficient booking experience.
+🚆 TrainPass SNCF is a Flask/Python-based web application that allows users to book train tickets for high-speed and regional trains in France. The system integrates an interactive train selection, seat reservation, and QR code generation for ticket validation, providing a smooth and efficient booking experience.
 
 Key Features
 ✅ Train Selection – Users can choose a train from the real-time schedule stored in a CSV file and database. The departure and arrival times are automatically fetched and displayed.
